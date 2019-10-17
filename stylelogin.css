@@ -1,0 +1,72 @@
+﻿
+.column {
+  
+  width: 30%;
+  padding: 10px;
+  margin:0 auto;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  	box-shadow: 2px 2px 3px #999;
+background-color: white;
+  /* Should be removed. Only for demonstration */
+}
+
+
+.columns {
+  float: left;
+  padding: 10px;
+ /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+.op{ background-image:url('asset/header.png'); color:white}
+
+ul li {list-style:none;}
+
+.button {
+    background-color: rgb(10, 139, 245);
+    border: none;
+    color: white;
+    padding:5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.button:hover{  background-color: #3e8e41;
+}
+.tb7 {
+	border-style: solid;
+    border-color: inherit;
+    border-width: 1;
+    background: url('images/bg.jpg') no-repeat;
+    color : #747862;
+	padding:4px 8px;
+	margin-bottom:0px;
+}
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    @media only screen and (max-width: 600px) {
+.column{width:100%; margin:0 auto;}
+}
+
+body {
+background:url('asset/WEBSITE-WOOD-BACKGROUND.jpg');}
