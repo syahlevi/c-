@@ -1,0 +1,155 @@
+-- Database: akunting
+
+-- DROP DATABASE akunting;
+
+create table accounts
+(
+id numeric(4) primary key not null,
+	name varchar(30) not null,
+	parent_id numeric(4),
+constraint	parent_id  unique(id)
+	
+);
+select*from accounts
+insert into accounts values(1002,'A',1000);
+delete from accounts where id=1000
+create table assets
+
+select*from costs
+select*from costs where extract(year from tanggal)='2013'
+create table assets
+(
+	assetsid int primary key generated always as identity not null,
+	account_id numeric(4) references accounts(id),
+amount numeric(10) not null,
+	"Date" date not null
+	
+);
+alter table assets rename column "Date" to tanggal
+ALTER TABLE assets alter column 
+select*from assets
+select coalesce(sum(amount), 0) from assets; 
+insert into assets (account_id,amount,tanggal) values(1000,5000000,'19/09/2019')
+delete from assets
+select sum(amount) from assets
+
+create table stocks
+(
+stockid int primary key GENERATED ALWAYS AS IDENTITY not null,
+	account_id numeric(4) references accounts(id),
+	amount numeric(10) not null,
+	"date" date not null
+)
+alter table stocks rename column "date" to tanggal
+select*from accounts
+select*from stocks
+insert into stocks (account_id, amount, tanggal) values (3000,120000000,current_timestamp)
+
+create table earnings
+(
+earningsid int primary key GENERATED ALWAYS AS IDENTITY not null,
+	account_id numeric(4) references accounts(id),
+	amount numeric(10) not null,
+	"date" date not null
+
+);
+alter table earnings rename column "date" to tanggal
+
+
+create table liabilities
+(
+liabilitiesid int primary key generated always as identity not null,
+	account_id numeric(4) references accounts(id),
+	amount numeric(10) not null,
+	"date" date not null
+
+)
+alter table liabilities rename column "date" to tanggal
+insert into debts (account_id, amount, tanggal) values(2000,0,current_timestamp)
+select*from debts;
+select*from accounts;
+select*from assets;
+	
+ALTER TABLE liabilities
+RENAME TO debts;
+
+create table costs
+(
+
+costsid int primary key generated always as identity not null,
+	account_id numeric(4) references accounts(id),
+	amount numeric(10) not null, 
+	"date" date not null
+)
+alter table costs rename column "date" to tanggal
+
+create table grossprofits
+(
+year numeric(10) not null,
+	month varchar(50) not null
+)
+select*from grossprofits
+insert into grossprofits values(2019,'Oktober')
+
+create table nettprofits
+(
+year numeric(10) not null,
+	month varchar(50) not null
+)
+select*from nettprofits
+insert into nettprofits values(2019,'Oktober')
+create table staff
+(
+staffid varchar(30) primary key not null,
+namastaff varchar(100) not null,
+passwords varchar(10) not null,
+createdby varchar(40) not null,
+createdon date not null,
+rolesid varchar(30) REFERENCES roles (rolesid)
+);
+
+create table activity
+(
+id int primary key identity(1,1) not null,
+idstaff varchar(30) not null,
+waktu date not null,
+isact numeric not null
+);
+
+create table roles
+(
+rolesid varchar(30) primary key not null,
+rolenames varchar(50) not null
+);
+
+create table rolesnew
+(
+rolesid varchar(30) primary key not null,
+	rolesname varchar(50) not null,
+	parentrolesid varchar(30) not null,
+	constraint parentrolesid unique(rolesid)
+);
+  CONSTRAINT order_unique UNIQUE (order_id)
+  
+drop table cascade roles;
+
+
+
+create table stafflogin
+(
+idlogin int primary key GENERATED ALWAYS AS IDENTITY not null,
+staffid varchar(30) not null references staff(staffid),
+loginstartdate date not null,
+	loginstartime time not null,
+loginoutdate date not null,
+	loginouttime time not null
+);
+
+CREATE DATABASE akunting
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Indonesian_Indonesia.1252'
+    LC_CTYPE = 'Indonesian_Indonesia.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;

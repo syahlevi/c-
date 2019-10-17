@@ -1,0 +1,176 @@
+﻿*{margin:0; padding:0;}
+
+
+
+.header{ width:200%; background-color:rgb(209, 23, 23); color:white; margin-bottom:0; padding-left:220px;
+    height: 123px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.content .pageheader{padding-left:110px;}
+.content .containers {
+    padding-left: 110px;
+    margin:0 auto;  
+}
+.content {min-width: 1280px;padding-left:110px;  }
+.header::before{ background-image:url('System-documents-icon.png');}
+ #wrapper { width:100%; min-width: 1280px;   float:left;     position:absolute;
+}
+.boxbawah{width:200%; background-color:rgb(164, 109, 109); color:white; padding-left:230px; padding-top:10px; padding-bottom:10px; padding-right:10px; margin-top:0;}
+.info{background-color:rgb(90, 177, 206); color:white; width:100%;}
+
+ul li {list-style:none; float:left; padding:10px;}
+
+.lefts:after {   content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
+
+.pageheader{background-color:white; width:200%;  background-color:rgb(90, 177, 206);   color:white; margin:0 auto; padding:5px;}
+
+.left {
+  width: 25%;
+}
+
+.opp{width:100%;}
+
+.columnsss {
+  float: left;
+  width: 4%;
+  padding: 25px;
+ /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.rowsss:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.columnss {
+  float: left;
+  width: 4%;
+  padding: 10px;
+ /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.rowss:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.create
+{
+background-image: url('102-512.png');
+background-repeat: no-repeat;
+padding-left: 30px;  /* width of the image plus a little extra padding */
+display: block;  /* may not need this, but I've found I do */
+}
+
+
+ .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 85%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+
+ .mGrid { 
+    width: 100%; 
+    background-color: #fff; 
+   margin:0 auto;
+    border: solid 1px #525252; 
+    border-collapse:collapse; 
+}
+.mGrid td { 
+    padding: 2px; 
+    border: solid 1px #c1c1c1; 
+    color: #717171; 
+}
+.mGrid th { 
+    padding: 4px 2px; 
+    color: #fff; 
+    background: #424242 url(grd_head.png) repeat-x top; 
+    border-left: solid 1px #525252; 
+    font-size: 0.9em; 
+}
+.mGrid .alt { background: #fcfcfc url(grd_alt.png) repeat-x top; }
+.mGrid .pgr { background: #424242 url(grd_pgr.png) repeat-x top; }
+.mGrid .pgr table { margin: 5px 0; }
+.mGrid .pgr td { 
+    border-width: 0; 
+    padding: 0 6px; 
+    border-left: solid 1px #666; 
+    font-weight: bold; 
+    color: #fff; 
+    line-height: 12px; 
+ }   
+.mGrid .pgr a { color: #666; text-decoration: none; }
+.mGrid .pgr a:hover { color: #000; text-decoration: none; }
+
+ .headermodal {
+  padding: 2px 16px;
+  padding-bottom:10px;
+ background:url(header.png);
+     padding:10px; width:100%;
+     overflow: hidden; color:white;
+  top: 0;
+    height: 86px;
+  color: white;
+}
+
+ .modal-body ul li {padding: 2px 16px; background-color:white; height:auto; width:100%;}
+
+
+    .modal {
+  /*display: none;*/ /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+.column {
+  
+  width: 20%;
+ padding-left:10px;
+ 
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  	box-shadow: 2px 2px 3px #999;
+background-color: white;
+  /* Should be removed. Only for demonstration */
+}
+
+.op{background-color:rgb(76, 255, 0);}
+
+body {
+    min-width: 1280px;
+}

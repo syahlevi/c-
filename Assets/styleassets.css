@@ -1,0 +1,33 @@
+﻿.tb7 {
+	border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    background: url('images/bg.jpg') no-repeat;
+    color : #747862;
+	padding:4px 8px;
+	margin-bottom:0px;
+}
+.button:hover{  background-color: #3e8e41;
+}
+
+
+.data{margin-left:10px;}
+table tr td{padding:5px;}
+.button {
+    float:left;
+    background-color: rgb(10, 139, 245);
+    border: none;
+    color: white;
+    padding:5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+   
+    margin-bottom: 10px;
+}
+
+.grid{margin-left:10px;}
+body {
+}
