@@ -1,0 +1,52 @@
+﻿.tb7 {
+	border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    background: url('images/bg.jpg') no-repeat;
+    color : #747862;
+	padding:4px 8px;
+	margin-bottom:0px;
+}
+.button:hover{  background-color: #3e8e41;
+}
+.button {
+    float:left;
+    background-color: rgb(10, 139, 245);
+    border: none;
+    color: white;
+    padding:5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+   
+    margin-bottom: 10px;
+}
+
+.kotakisi{margin-bottom:10px;}
+
+.kotakgrid{padding-top:10px;}
+
+.select {
+    padding:3px;
+    margin: 0;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+body {
+}

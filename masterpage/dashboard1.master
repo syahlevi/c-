@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="dashboard1.master.cs" Inherits="masterpage_dashboard1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+
+   <title>Dashboard Management File Systems</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+          <meta Http-Equiv="Cache-Control" Content="no-cache"/>
+          <META Http-Equiv="Pragma" Content="no-cache"/>
+          <META Http-Equiv="Expires" Content="0"/>
+      <%--    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />--%>
+          <meta name="HandheldFriendly" content="true" />
+<%--          <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
+          <link rel="stylesheet" href="../asset/styledashboard.css" type="text/css" />
+          <link rel="stylesheet" href="../asset/sidebarw3.css" type="text/css" />
+          <link rel="stylesheet" href="../asset/ajaxcss.css" type="text/css" />
+        <script>
+
+            var span = document.getElementsByClassName("close")[0];
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc() {
+  var x = document.getElementById("demoDrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className = 
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+function ClearHistory() {
+    var backlen = history.length;
+    history.go(-backlen);
+    window.location.href = loggedOutPageUrl
+}
+
+</script>
+        </asp:ContentPlaceHolder>
+      
+</head>
+<body>
+    <form id="form1" runat="server">
+       
+
+       <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:17%; top: 0px; left: 0px;">
+  <a href="http://10.0.30.18:78/dashboard/dashboard.aspx" class="w3-bar-item w3-button w3-border-bottom">Dashboard</a> 
+  
+            <div class="w3-dropdown-hover">
+    <button class="w3-button w3-border-bottom">Configurasi Database
+      <i class=" fa-circle"></i>
+    </button>
+    <div class="w3-dropdown-content w3-bar-block ">
+        <asp:LinkButton runat="server" ID="LinkButton2" Text="Cek Koneksi" CssClass="w3-bar-item w3-button" OnClick="LinkButton2_Click" ></asp:LinkButton>
+              <asp:LinkButton runat="server" ID="LinkButton3"  Text="Backup" CssClass="w3-bar-item w3-button"></asp:LinkButton>
+
+        <a href="http://10.0.30.18:78/historylogin/historylogin.aspx" class="w3-bar-item w3-button">History Login</a>
+
+    </div>
+  </div> 
+           
+            <div class="w3-dropdown-hover">
+    <button class="w3-button w3-border-bottom">Master Data
+      <i class=" fa-circle"></i>
+    </button>
+    <div class="w3-dropdown-content w3-bar-block ">
+        <asp:LinkButton runat="server" ID="lbdatastaff" Text="Data Staff" CssClass="w3-bar-item w3-button" OnClick="lbdatastaff_Click"></asp:LinkButton>
+              <asp:LinkButton runat="server" ID="LinkButton1" OnClick="LinkButton1_Click" Text="Data Roles" CssClass="w3-bar-item w3-button"></asp:LinkButton>
+
+        <a href="http://10.0.30.18:78/historylogin/historylogin.aspx" class="w3-bar-item w3-button">History Login</a>
+                <a href="http://10.0.30.18:78/Accounts/Accounts.aspx" class="w3-bar-item w3-button">Accounts</a>
+                        <a href="http://10.0.30.18:78/Assets/assets.aspx" class="w3-bar-item w3-button">Assets</a>
+                                        <a href="http://10.0.30.18:78/costs/costs.aspx" class="w3-bar-item w3-button">Costs</a>
+
+                                <a href="http://10.0.30.18:78/Accounts/Accounts.aspx" class="w3-bar-item w3-button">Liabilities</a>
+                        <a href="http://10.0.30.18:78/Stockholderstocks/stocks.aspx" class="w3-bar-item w3-button">Stockholder Stocks</a>
+
+         <div class="w3-dropdown-hover">
+            <button class="w3-button w3-border-bottom"> Profit
+
+            </button>
+            <div class="w3-dropdown-content w3-bar-block ">
+                <a href="http://10.0.30.18:78/GrossProfit/GrossProfit.aspx" class="w3-bar-item w3-button">Gross Profit</a>
+                <a href="http://10.0.30.18:78/NettProfit/Nettprofits.aspx" class="w3-bar-item w3-button">Nett Profit</a>
+           </div>
+         </div>
+
+    </div>
+  </div> 
+           
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-border-bottom">Personal Account
+      <i class=" fa-circle"></i>
+    </button>
+    <div class="w3-dropdown-content w3-bar-block ">
+      <a href="http://10.0.30.18:78/updateprofil/ubahprofil.aspx" class="w3-bar-item w3-button">Update Profile</a>
+<asp:LinkButton runat="server" ID="lb1" CssClass="w3-bar-item w3-button" Text="Log Out" OnClick="lb1_Click" ></asp:LinkButton> 
+
+    </div>
+  </div> 
+
+                       <div class="w3-dropdown-hover">
+    <button class="w3-button w3-border-bottom">Report
+      <i class=" fa-circle"></i>
+    </button>
+    <div class="w3-dropdown-content w3-bar-block ">
+                <a href="http://10.0.30.18:78/report/report.aspx" class="w3-bar-item w3-button">Operational Cost Report</a>
+                <a href="http://10.0.30.18:78/GrossProfitReport/grossprofitreport.aspx" class="w3-bar-item w3-button">Gross Profit Report</a>
+
+
+        <a href="http://10.0.30.18:78/historylogin/historylogin.aspx" class="w3-bar-item w3-button">Nett Profit</a>
+                <a href="http://10.0.30.18:78/Accounts/Accounts.aspx" class="w3-bar-item w3-button">Stopping Retained Earnings</a>
+                        
+       
+
+    </div>
+  </div> 
+
+  <a href="http://10.0.30.18:78/reportviwer.aspx" class="w3-bar-item w3-button w3-border-bottom">Report Viewer</a> 
+  <a href="http://10.0.30.18:78/belajarjavascript/Default.aspx" class="w3-bar-item w3-button w3-border-bottom">Belajar JavaScript</a> 
+
+</div>
+      
+
+        <div class="w3-container">
+            <div class="header">
+                <div class="rowsss">
+                    <div class="columnsss left">
+                <img src="../asset/System-documents-icon.png" height="60" width="60" />
+                        </div>
+                    <div class="columnsss opp">
+               
+                 <h3> Akunting Application Web Based</h3>     </div>
+            
+                </div>
+               </div>
+
+             
+       
+            <div class="boxbawah">
+               
+                   
+                        Selamat Datang
+                       <asp:Label runat="server" ID="lbnama"></asp:Label>
+                <asp:Label runat="server" ID="lbjabatan"></asp:Label>
+                
+               </div>
+
+           
+             
+            
+           <%-- </div>--%>
+        <div id="wrapper">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+            </div></div>
+    </form>
+</body>
+</html>
